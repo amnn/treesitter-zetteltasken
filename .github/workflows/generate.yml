@@ -1,0 +1,16 @@
+name: Check generated files up-to-date
+
+on:
+  pull_request: ~
+  push:
+    branches:
+      - main
+
+jobs:
+  check-generated:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm install
+      - run: npm run generate
+      - run: git diff --exit-code
