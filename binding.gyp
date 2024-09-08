@@ -11,7 +11,8 @@
       "sources": [
         "bindings/node/binding.cc",
         "src/parser.c",
-        # NOTE: if your language has an external scanner, add it here.
+        "src/scanner.c",
+        "vendor/tree-sitter-markdown/tree-sitter-markdown/src/scanner.c",
       ],
       "conditions": [
         ["OS!='win'", {

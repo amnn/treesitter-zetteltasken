@@ -7,9 +7,8 @@
 //! let code = r#"
 //! "#;
 //! let mut parser = tree_sitter::Parser::new();
-//! let language = tree_sitter_zetteltasken::LANGUAGE;
 //! parser
-//!     .set_language(&language.into())
+//!     .set_language(&tree_sitter_zetteltasken::language())
 //!     .expect("Error loading Zetteltasken parser");
 //! let tree = parser.parse(code, None).unwrap();
 //! assert!(!tree.root_node().has_error());
@@ -20,14 +19,15 @@
 //! [Parser]: https://docs.rs/tree-sitter/*/tree_sitter/struct.Parser.html
 //! [tree-sitter]: https://tree-sitter.github.io/
 
-use tree_sitter_language::LanguageFn;
+use tree_sitter::Language;
 
 extern "C" {
-    fn tree_sitter_zetteltasken() -> *const ();
+    fn tree_sitter_zetteltasken() -> Language;
 }
 
-/// The tree-sitter [`LanguageFn`] for this grammar.
-pub const LANGUAGE: LanguageFn = unsafe { LanguageFn::from_raw(tree_sitter_zetteltasken) };
+pub fn language() -> Language {
+    unsafe { tree_sitter_zetteltasken() }
+}
 
 /// The content of the [`node-types.json`][] file for this grammar.
 ///
@@ -43,11 +43,13 @@ pub const NODE_TYPES: &str = include_str!("../../src/node-types.json");
 
 #[cfg(test)]
 mod tests {
+    use super::*;
+
     #[test]
     fn test_can_load_grammar() {
         let mut parser = tree_sitter::Parser::new();
         parser
-            .set_language(&super::LANGUAGE.into())
+            .set_language(&language())
             .expect("Error loading Zetteltasken parser");
     }
 }
