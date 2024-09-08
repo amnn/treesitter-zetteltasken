@@ -5,10 +5,11 @@
   "main": "index.js",
   "types": "bindings/node",
   "scripts": {
+    "install": "node-gyp-build",
     "prestart": "tree-sitter build --wasm",
     "start": "tree-sitter playground",
-    "test": "tree-sitter test",
-    "generate": "tree-sitter generate"
+    "test": "node --test bindings/node/*_test.js",
+    "test-corpus": "tree-sitter test"
   },
   "keywords": [
     "treesitter",
@@ -26,7 +27,9 @@
   "author": "Ashok Menon",
   "license": "MIT",
   "devDependencies": {
-    "tree-sitter-cli": "^0.23.0"
+    "tree-sitter-cli": "^0.23.0",
+    "tree-sitter-markdown": "vendor/tree-sitter-markdown/tree-sitter-markdown",
+    "prebuildify": "^6.0.1"
   },
   "peerDependencies": {
     "tree-sitter": "^0.21.1"
@@ -41,5 +44,8 @@
       "scope": "source.zetteltasken",
       "injection-regex": "^zetteltasken$"
     }
-  ]
+  ],
+  "dependencies": {
+    "node-gyp-build": "^4.8.1"
+  }
 }

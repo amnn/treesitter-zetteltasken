@@ -6,4 +6,7 @@ hello
 
 ---
 
-(source_file)
+(document
+  (section
+    (paragraph
+      (inline))))
