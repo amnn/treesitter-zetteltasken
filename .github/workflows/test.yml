@@ -23,7 +23,9 @@ jobs:
         with:
           submodules: 'true'
       - uses: actions/setup-go@v5
-      - run: go test
+      - run: |
+          cd bindings/go
+          go test
   node-tests:
     runs-on: ubuntu-latest
     steps:
