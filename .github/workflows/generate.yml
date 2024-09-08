@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: 'true'
       - run: npm install
       - run: npm run generate
+      - run: npm run prestart
       - run: git diff --exit-code

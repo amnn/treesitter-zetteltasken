@@ -32,6 +32,7 @@
   "license": "MIT",
   "devDependencies": {
     "tree-sitter-cli": "^0.23.0",
+    "tree-sitter-markdown": "vendor/tree-sitter-markdown/tree-sitter-markdown",
     "prebuildify": "^6.0.1"
   },
   "dependencies": {
