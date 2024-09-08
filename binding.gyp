@@ -7,7 +7,7 @@
       ],
       "include_dirs": [
         "src",
-        "vendor/tree-sitter-markdown/tree-sitter-markdown/src",
+        "third-party/tree-sitter-markdown/tree-sitter-markdown/src",
       ],
       "sources": [
         "bindings/node/binding.cc",

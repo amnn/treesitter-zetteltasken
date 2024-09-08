@@ -2,7 +2,7 @@ use std::path::Path;
 
 fn main() {
     let src_dir = Path::new("src");
-    let vendor_dir = Path::new("vendor");
+    let third_party_dir = Path::new("third-party");
 
     let mut c_config = cc::Build::new();
     c_config.std("c11").include(src_dir);
@@ -17,7 +17,7 @@ fn main() {
     // The markdown external scanner is vendored into the project, and included in our own external
     // scanner implementation. Include it as a file to watch for changes, but don't include it as
     // its own source file.
-    let mut md_scanner_path = vendor_dir.to_owned();
+    let mut md_scanner_path = third_party_dir.to_owned();
     md_scanner_path.extend([
         "tree-sitter-markdown",
         "tree-sitter-markdown",

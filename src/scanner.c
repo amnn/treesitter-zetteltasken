@@ -10,4 +10,4 @@
 #define tree_sitter_markdown_external_scanner_scan                             \
   tree_sitter_zetteltasken_external_scanner_scan
 
-#include "../vendor/tree-sitter-markdown/tree-sitter-markdown/src/scanner.c"
+#include "../third-party/tree-sitter-markdown/tree-sitter-markdown/src/scanner.c"

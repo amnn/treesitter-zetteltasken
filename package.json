@@ -26,14 +26,14 @@
     "bindings/node/*",
     "queries/*",
     "src/**",
-    "vendor/tree-sitter-markdown/tree-sitter-markdown/src/scanner.c",
+    "third-party/tree-sitter-markdown/tree-sitter-markdown/src/scanner.c",
     "*.wasm"
   ],
   "author": "Ashok Menon",
   "license": "MIT",
   "devDependencies": {
     "tree-sitter-cli": "^0.23.0",
-    "tree-sitter-markdown": "vendor/tree-sitter-markdown/tree-sitter-markdown",
+    "tree-sitter-markdown": "third-party/tree-sitter-markdown/tree-sitter-markdown",
     "prebuildify": "^6.0.1"
   },
   "dependencies": {

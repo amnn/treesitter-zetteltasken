@@ -16,7 +16,7 @@ include = [
   "grammar.js",
   "queries/*",
   "src/*",
-  "vendor/tree-sitter-markdown/tree-sitter-markdown/src/scanner.c",
+  "third-party/tree-sitter-markdown/tree-sitter-markdown/src/scanner.c",
 ]
 
 [lib]

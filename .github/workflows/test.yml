@@ -16,6 +16,17 @@ jobs:
       - uses: actions/setup-node@v4
       - run: npm install
       - run: npm run test-corpus
+  go-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: 'true'
+      - uses: actions/setup-go@v5
+      - name: Run go test
+        run: |
+          cd bindings/go
+          go test
   node-tests:
     runs-on: ubuntu-latest
     steps:
