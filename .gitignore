@@ -1,4 +1,7 @@
+*.egg-info/
+*.so
 .build
+__pycache__
 build
 node_modules
 target

@@ -36,6 +36,19 @@ jobs:
       - uses: actions/setup-node@v4
       - run: npm install
       - run: npm test
+  python-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: 'true'
+      - uses: actions/setup-python@v5
+        with:
+          cache: 'pip'
+          cache-dependency-path: 'pyproject.toml'
+          python-version: '3.10'
+      - run: pip install -e .[core]
+      - run: python -m unittest discover bindings/python/tests
   rust-tests:
     runs-on: ubuntu-latest
     steps:
