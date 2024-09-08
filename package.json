@@ -20,6 +20,9 @@
   ],
   "files": [
     "grammar.js",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
     "queries/*",
     "src/**",
     "*.wasm"
@@ -30,6 +33,9 @@
     "tree-sitter-cli": "^0.23.0",
     "tree-sitter-markdown": "vendor/tree-sitter-markdown/tree-sitter-markdown",
     "prebuildify": "^6.0.1"
+  },
+  "dependencies": {
+    "node-gyp-build": "^4.8.1"
   },
   "peerDependencies": {
     "tree-sitter": "^0.21.1"
@@ -44,8 +50,5 @@
       "scope": "source.zetteltasken",
       "injection-regex": "^zetteltasken$"
     }
-  ],
-  "dependencies": {
-    "node-gyp-build": "^4.8.1"
-  }
+  ]
 }
