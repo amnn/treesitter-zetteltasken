@@ -12,5 +12,5 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: npm install
-      - run: npm run generate
+      - run: npm run generate --no-bindings
       - run: git diff --exit-code
