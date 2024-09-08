@@ -26,6 +26,7 @@
     "bindings/node/*",
     "queries/*",
     "src/**",
+    "vendor/tree-sitter-markdown/tree-sitter-markdown/src/scanner.c",
     "*.wasm"
   ],
   "author": "Ashok Menon",

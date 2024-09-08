@@ -11,15 +11,18 @@ edition = "2021"
 autoexamples = false
 
 build = "bindings/rust/build.rs"
-include = ["bindings/rust/*", "grammar.js", "queries/*", "src/*"]
+include = [
+  "bindings/rust/*",
+  "grammar.js",
+  "queries/*",
+  "src/*",
+  "vendor/tree-sitter-markdown/tree-sitter-markdown/src/scanner.c",
+]
 
 [lib]
 path = "bindings/rust/lib.rs"
 
 [dependencies]
-tree-sitter-language = "0.1"
-
-[dev-dependencies]
 tree-sitter = { version = "0.22" }
 
 [build-dependencies]
