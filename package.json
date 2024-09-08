@@ -9,7 +9,8 @@
     "prestart": "tree-sitter build --wasm",
     "start": "tree-sitter playground",
     "test": "node --test bindings/node/*_test.js",
-    "test-corpus": "tree-sitter test"
+    "test-corpus": "tree-sitter test",
+    "generate": "tree-sitter generate"
   },
   "keywords": [
     "treesitter",
