@@ -14,6 +14,9 @@ fn main() {
     c_config.file(&parser_path);
     println!("cargo:rerun-if-changed={}", parser_path.to_str().unwrap());
 
+    // The markdown external scanner is vendored into the project, and included in our own external
+    // scanner implementation. Include it as a file to watch for changes, but don't include it as
+    // its own source file.
     let mut md_scanner_path = vendor_dir.to_owned();
     md_scanner_path.extend([
         "tree-sitter-markdown",
@@ -21,7 +24,6 @@ fn main() {
         "src",
         "scanner.c",
     ]);
-    c_config.file(&md_scanner_path);
     println!(
         "cargo:rerun-if-changed={}",
         md_scanner_path.to_str().unwrap()

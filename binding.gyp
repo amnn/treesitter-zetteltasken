@@ -7,12 +7,12 @@
       ],
       "include_dirs": [
         "src",
+        "vendor/tree-sitter-markdown/tree-sitter-markdown/src",
       ],
       "sources": [
         "bindings/node/binding.cc",
         "src/parser.c",
         "src/scanner.c",
-        "vendor/tree-sitter-markdown/tree-sitter-markdown/src/scanner.c",
       ],
       "conditions": [
         ["OS!='win'", {
