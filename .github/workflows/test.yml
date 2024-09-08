@@ -43,6 +43,9 @@ jobs:
         with:
           submodules: 'true'
       - uses: actions/setup-python@v5
+        with:
+          cache: 'pip'
+          cache-depenency-path: 'pyproject.toml'
       - run: pip install -e .[core]
       - run: python -m unittest discover bindings/python/tests
   rust-tests:
